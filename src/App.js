@@ -1,25 +1,39 @@
 import logo from './logo.svg';
 import './App.css';
+import { Title } from './Title';
+import { Form } from './form';
+import { ShowResult } from './showresult';
 
 function App() {
+  const [counter, setCounter] = useState(134560);
+  const [display, setDisplay] = useState("juhygtfc qwrqwr d");
+  const [Ttle, setTtle] = useState("hhh");
+
+   const increase = () => {
+     setCounter(counter + 1);
+  };
+
+  const decrease = () => {
+    setCounter(counter - 1);
+   };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <p>datat in real time</p>
+      <Title />
+      <Form func={setDisplay} />
+      <ShowResult show={display} />
+      <Title Ttle ={Ttle}/>
+
+      <p>{counter}</p>
+      <button onClick={increase}>+</button>
+      <button onClick={decrease}>-</button> 
     </div>
   );
 }
 
 export default App;
+
+
+
+
